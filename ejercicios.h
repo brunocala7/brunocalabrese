@@ -10,7 +10,7 @@ void agregarNumeros(vector<int> &numeros, vector<int> elementosNuevos);
 
 void imprimirValores(vector<int> numeros);
 
-void eliminarImpares(vector<int> numeros);
+void eliminarImpares(vector<int> &numeros);
 
 vector<vector<int> > multiplicarMatriz(vector<vector<int> > matriz);
 

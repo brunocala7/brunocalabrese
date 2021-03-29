@@ -1,25 +1,32 @@
 #include <iostream>
+#include <string>
 #include <vector>
-
 using namespace std;
 
-int main (){
-    int cant_numeros;
-    int num_actual;
-    int suma = 0;
-    vector<int> v;
+bool esPar(int size){
+	if(size%2==0) return true;
+	else return false;
+}
 
-    cout << "Cuantos números quiere agregar? ";
-    cin >> cant_numeros;
-
-    for(int i = 0;i < cant_numeros;i++){
-        cin >> num_actual;
-        v.push_back(num_actual);
-    }
-
-    for(int i = 0;i < v.size();i++){
-        suma += v[i];
-    }
-
-    cout << "La suma de los elementos del vector es: " << suma << endl;
+int main(){
+	string p1;
+	string p2;
+	string p3;
+	string p4;
+	string p5;
+	string p6;
+	cin>>p1;
+	cin>>p2;
+	cin>>p3;
+	cin>>p4;
+	cin>>p5;
+	cin>>p6;
+	vector<string>palabras{p1,p2,p3,p4,p5,p6};
+	vector<string>palabrasOrdenadas;
+	for(int i=0; palabras.size()<i; i++){
+		size=palabras[i].size()
+		if(esPar(size)==true){
+			palabrasOrdenadas.push_back
+		}
+	}
 }

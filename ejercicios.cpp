@@ -1,5 +1,6 @@
 #include "ejercicios.h"
 #include <iostream>
+#include <vector>
 
 bool esPar(int n){
     bool es_par = false;
@@ -24,7 +25,7 @@ bool todosSonPares(vector<int> numeros){
     return son_pares;
 }
 
-void agregarNumeros(vector<int> numeros, vector<int> elementosNuevos){
+void agregarNumeros(vector<int> &numeros, vector<int> elementosNuevos){
     for(int i = 0;i < elementosNuevos.size();i++){
         numeros.push_back(elementosNuevos[i]);
     }
@@ -43,6 +44,14 @@ void imprimirValores(vector<int> numeros){
     }
 }
 
+void eliminarImpares(vector<int> &numeros){
+    for(int i = 0;i < numeros.size();i++){
+        if(numeros[i] % 2 != 0){      
+            numeros.erase(numeros.begin()+(i-1));
+        }
+    }
+}
+
 vector<vector<int> > multiplicarMatriz(vector<vector<int> > matriz){
     
 }
@@ -50,3 +59,11 @@ vector<vector<int> > multiplicarMatriz(vector<vector<int> > matriz){
 void mezclarMatrices(vector<vector<int> > matrizA, vector<vector<int> > matrizB){
     
 }
+
+int main(){
+    vector<int> v = {2,5,76,23,77,35,81};
+
+    eliminarImpares(v);
+    imprimirValores(v);
+}
+
