@@ -45,12 +45,19 @@ void imprimirValores(vector<int> numeros){
 }
 
 void eliminarImpares(vector<int> &numeros){
-    for(int i = 0;i < numeros.size();i++){
-        if(numeros[i] % 2 != 0){      
-            numeros.erase(numeros.begin()+(i-1));
+    vector<int> vectorConPares;
+    for (int i = 0; i < numeros.size(); ++i) {
+        int valorActual = numeros[i];
+        if (esPar(valorActual)){
+            vectorConPares.push_back(valorActual);
         }
     }
+    numeros.clear();
+    agregarNumeros(numeros,vectorConPares);
+
 }
+
+//necesitamos dos contadores
 
 vector<vector<int> > multiplicarMatriz(vector<vector<int> > matriz){
     
@@ -59,11 +66,3 @@ vector<vector<int> > multiplicarMatriz(vector<vector<int> > matriz){
 void mezclarMatrices(vector<vector<int> > matrizA, vector<vector<int> > matrizB){
     
 }
-
-int main(){
-    vector<int> v = {2,5,76,23,77,35,81};
-
-    eliminarImpares(v);
-    imprimirValores(v);
-}
-
