@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class MainArrayList {
-    public static float calcular_total(ArrayList<Producto> productos){
+    public float calcular_total(ArrayList<Producto> productos){
         float total = 0;
 
         for (Producto producto : productos) {
@@ -16,8 +16,9 @@ public class MainArrayList {
     }
 
     public static void main (String[] args){
+        MainArrayList sistema = new MainArrayList();
         float precio;
-        float opcion;
+        String opcion;
         String nombre;
         Scanner sc_string = new Scanner(System.in);
         Scanner sc_float = new Scanner(System.in);
@@ -26,7 +27,7 @@ public class MainArrayList {
 
         while(true){
             System.out.println("REGISTRO DE PRODUCTOS");
-            System.out.println("Importe Parcial: " + calcular_total(productos));
+            System.out.println("Importe Parcial: " + sistema.calcular_total(productos));
             System.out.print("Nombre del producto: ");
             nombre = sc_string.nextLine();
             System.out.print("Precio del producto: ");
@@ -38,15 +39,15 @@ public class MainArrayList {
 
             System.out.println("0 -> Continuar compra");
             System.out.println("1 -> Finalizar compra");
-            System.out.println("Importe parcial: " + calcular_total(productos));
+            System.out.println("Importe parcial: " + sistema.calcular_total(productos));
 
-            opcion = sc_float.nextFloat();
+            opcion = sc_string.nextLine();
 
-            if (opcion == 1){
+            if (opcion.equals("1")){
                 break;
             }
         }
 
-        System.out.println("Importe total: " + calcular_total(productos));
+        System.out.println("Importe total: " + sistema.calcular_total(productos));
     }
 }

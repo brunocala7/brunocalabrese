@@ -5,9 +5,11 @@ public class Main{
     
 
     public static void main (String[] args){
-        float total = 0,precio;
-        float opcion;
+        float total = 0;
+        float precio = 0;
+        String opcion;
         String nombre;
+        Scanner sc_int = new Scanner(System.in);
         Scanner sc_string = new Scanner(System.in);
         Scanner sc_float = new Scanner(System.in);
 
@@ -24,13 +26,12 @@ public class Main{
 
             total += p1.getPrecio();
 
-            System.out.println("0 -> Continuar compra");
             System.out.println("1 -> Finalizar compra");
             System.out.println("Importe parcial: " + total);
 
-            opcion = sc_float.nextFloat();
+            opcion = sc_int.nextLine();
 
-            if (opcion == 1){
+            if (opcion.equals("1")){
                 break;
             }
         }
