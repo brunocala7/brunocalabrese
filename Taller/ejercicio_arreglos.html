@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Arreglos</title>
+    </head>
+
+    <body>
+        <script>
+            function cantApariciones(a,n){
+                var cantidad = 0;
+
+                for(i = 0;i < a.lenght;i++){
+                    if(a[i] == n){
+                        cantidad++;
+                    }
+                }
+
+                return cantidad;
+            }
+
+            function posibleMailValido(mail){
+                var es_valido = true;
+
+                // se fija si al principio o al final hay un arroba
+
+                if(mail[0] != '@' && mail[mail.lenght - 1] != '@'){
+                    for(i = 1;i < mail.lenght - 1;i++){
+                        if(mail[i] == '@'){
+                            es_valido = true;
+                            break;
+                        }
+                    }
+                }
+
+                return es_valido;
+                
+            }
+
+            function posibleTelefonoValido(telefono){
+                var es_valido = false;
+                var cant_digitos = 0;
+
+                if(telefono.startsWith("011",3)){
+                    for(i = 3;i < telefono.lenght;i++){
+                        cant_digitos++;
+                    }
+                }
+                else if(telefono.startsWith("11",2)){
+                    for(i = 2;i < telefono.lenght;i++){
+                        cant_digitos++;
+                    }
+                }
+
+                if(cant_digitos == 8){
+                    es_valido = true;
+                }
+
+                return es_valido;
+            }
+        </script>
+
+    </body>
+</html>
+
+
+
+/*
+EJERCICIO 1:
+var aux_ind;
+let arreglo = [1,54,213,4,21312];
+arreglo.push("hola","yunque","paquete","bicicleta");
+let arreglo_vacio;
+arreglo.push(arreglo_vacio);
+arreglo.push(3.5,4.791);
+arreglo.pop();
+aux_ind = arreglo.indexOf("yunque");
+arreglo.splice(aux_ind,1);
+aux_ind = arreglo.indexOf("hola");
+arreglo.splice(aux_ind,1,"chau");*/
