@@ -1,4 +1,4 @@
-package source;
+package com.company;
 
 public class Producto {
     private float precio;

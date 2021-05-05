@@ -1,11 +1,11 @@
-package source;
+package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SistemaDeRegistro {
+public class Sistema {
     private ArrayList<Producto> listaProductos;
 
-    public SistemaDeRegistro (){
+    public Sistema (){
         this.listaProductos = new ArrayList<>();
     }
 
