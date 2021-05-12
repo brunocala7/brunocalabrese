@@ -44,17 +44,8 @@ public class MainHashSet2 {
         }
         else{
             for(Integer a : hashSetNumeros){
-                if(!sonIguales){
-                    break;
-                }
-                else{
+                if(!hashSetNumeros2.contains(a)){
                     sonIguales = false;
-                }
-                for(Integer b : hashSetNumeros2){
-                    if(a == b){
-                        sonIguales = true;
-                        break;
-                    }
                 }
             }
         }
