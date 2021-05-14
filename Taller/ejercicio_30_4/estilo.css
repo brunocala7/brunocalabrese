@@ -12,3 +12,10 @@
 #boton2{
     margin-top: 20%;
 }
+
+#cuadradoNuevo{
+    height: 1cm;
+    width: 1cm;
+    position: absolute;
+    z-index: 1;
+}
