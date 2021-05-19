@@ -1,7 +1,7 @@
 let margen = "1cm";
 
 function moverHaciaDerecha (){
-    let cuadrado = document.getElementById("cuadrado");
+    let cuadrado = document.getElementById("movil");
     let nuevoValorDeMargen = parseInt(margen.charAt(0)) + 1;
     margen = nuevoValorDeMargen + "cm";
     cuadrado.style.marginLeft = margen;
@@ -9,7 +9,7 @@ function moverHaciaDerecha (){
 }
 
 function moverHaciaIzquierda (){
-    let cuadrado = document.getElementById("cuadrado");
+    let cuadrado = document.getElementById("movil");
     let nuevoValorDeMargen = parseInt(margen.charAt(0)) - 1;
     margen = nuevoValorDeMargen + "cm";
     cuadrado.style.marginLeft = margen;
@@ -17,7 +17,7 @@ function moverHaciaIzquierda (){
 }
 
 function moverHaciaAbajo (){
-    let cuadrado = document.getElementById("cuadrado");
+    let cuadrado = document.getElementById("movil");
     let nuevoValorDeMargen = parseInt(margen.charAt(0)) + 1;
     margen = nuevoValorDeMargen + "cm";
     cuadrado.style.marginTop = margen;
@@ -25,7 +25,7 @@ function moverHaciaAbajo (){
 }
 
 function moverHaciaArriba (){
-    let cuadrado = document.getElementById("cuadrado");
+    let cuadrado = document.getElementById("movil");
     let nuevoValorDeMargen = parseInt(margen.charAt(0)) - 1;
     margen = nuevoValorDeMargen + "cm";
     cuadrado.style.marginBottom = margen;
@@ -33,19 +33,21 @@ function moverHaciaArriba (){
 }
 
 function mismaPosicion (){
-    let cuadrado_nuevo = document.getElementById("cuadradoNuevo");
-    let cuadrado_viejo = document.getElementById("cuadrado");
+    let circulo = document.getElementById("fijo");
+    let cuadrado = document.getElementById("movil");
 
-    let x1 = cuadrado_nuevo.getBoundingClientRect().x;
-    let y1 = cuadrado_nuevo.getBoundingClientRect().y;
-    let x2 = cuadrado_viejo.getBoundingClientRect().x;
-    let y2 = cuadrado_viejo.getBoundingClientRect().y;
+    let x1 = cuadrado.getBoundingClientRect().x;
+    let y1 = cuadrado.getBoundingClientRect().y;
+    let x2 = circulo.getBoundingClientRect().x;
+    let y2 = circulo.getBoundingClientRect().y;
 
     if((x1 == x2) && (y1 == y2)){
-        cuadrado_nuevo.style.opacity = 0;
+        cuadrado.style.backgroundColor = "blueviolet";
+        circulo.style.opacity = 0;
     }
     else{
-        cuadrado_nuevo.style.opacity = 100;
+        circulo.style.opacity = 100;
+        cuadrado.style.backgroundColor = "brown";
     }
 
 }

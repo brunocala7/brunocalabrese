@@ -1,19 +1,20 @@
-#cuadrado{
+#movil{
     height: 1cm;
     width: 1cm;
     margin-top: 1cm;
     position: absolute;
+    background-color: brown;
 }
 
-#cuadradoNuevo{
+#fijo{
     height: 1cm;
     width: 1cm;
     position: absolute;
     z-index: 1;
     margin: 4cm;
     margin-left: 6cm;
-    border: 10px solid blueviolet;
-    border-radius: 50px;
+    border: 2px;
+    border-radius: 25px;
     background-color: blueviolet;
 }
 
@@ -24,6 +25,3 @@
 #botones {
     background-color: red;
 }
-
-
-
