@@ -1,8 +1,8 @@
 package com.company;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainLibros {
@@ -12,6 +12,8 @@ public class MainLibros {
         Scanner sc_string = new Scanner(System.in);
 
         HashMap<String,Integer> editorialesCantidad = new HashMap<>();
+
+        HashSet <Cliente> listaClientes = new HashSet<>(); 
 
         ArrayList <Libro> listaLibros = new ArrayList<>();
 
@@ -69,5 +71,7 @@ public class MainLibros {
         }
         
         System.out.println("La editorial que más libros vendió fue " + editorialConMasVentas);
+
+        
     }
 }
