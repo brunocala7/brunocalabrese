@@ -1,0 +1,10 @@
+p{
+    color: rgb(15, 165, 120);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input{
+    color: green;
+    background-color: beige;
+    border-color: chartreuse;
+}
