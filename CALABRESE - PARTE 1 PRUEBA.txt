@@ -1,0 +1,37 @@
+1- Una clase es la representación de una entidad, por ejemplo la clase alumno. Vendría siendo como un molde
+
+2- Un objeto es la instancia creada de la clase, por ejemplo el alumno 1. Vendria siendo como las galletas que se sacan de ese molde.
+
+3- El constructor es la forma de inicializar un objeto.
+
+4-
+a) Persona p1 = new Persona();
+b) Persona p2 = new Persona("Matias");
+
+5- Infinitos
+
+6- Los atributos de una clase son variables que representan las características que tiene la entidad.
+
+7- Los metodos de una clase son las funciones que representan las acciones que realiza una entidad.
+
+8- Sí.
+
+9- "this" se usa para indicar que el método afecta al objeto que lo esta llamando.
+
+10- Deben tener los mismos valores en sus atributos.
+
+11- Sirve para reservar espacio en memoria al objeto que se va a crear.
+
+12- False.
+
+13- Para indicar la carpeta donde está guardado el archivo.
+
+14- Sirve para importar las librerías de codígo.
+
+15- La clase scanner permite la entrada de texto por parte del usuario en nuestros programas.
+
+16- El arraylist es una clase que introduce los arreglos, es decir, una lista de datos todos del mismo tipo. Todos estos datos están guardados en la misma variable y para acceder a cada uno se puede hacerlo a traves de un índice.
+
+17- El hashset es parecido a el arraylist ya que permite el guardado de datos del mismo tipo en una sola variable. La diferencia está es que los datos no se van a repetir (por ejemplo si tenemos el hashset {43,5,213,32} y le ingresamos el 213 el hashset va quedar de la misma forma. Otra diferencia es que no se puede acceder por índices, sino que hay que hacerlo a traves de un foreach.
+
+18- El hashmap es un tipo de variable que tiene una clave y un dato asociado a esa clave. Entonces, podriamos tener un hashmap que tenga como claves palabras y asociado tenga las definiciones. Para acceder a cada dato hay que hacerlo a través de la clave y estas tienen que ser únicas.
