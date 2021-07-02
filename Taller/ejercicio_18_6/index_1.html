@@ -29,14 +29,16 @@
             let apellidoIngresado = $("#apellido").val();
             let edadIngresada = $("#edad").val();
 
+            if(edadIngresada > 18){
+                $("body").css("background-color","blue");
+            }
+            else{
+                $("body").css("background-color","green")
+            }
+
             $("#mostrarNombre").text(nombreIngresado);
-            $("#mostrarNombre").css("color","red");
-
             $("#mostrarApellido").text(apellidoIngresado);
-            $("#mostrarApellido").css("color","green");
-
             $("#mostrarEdad").text(edadIngresada);
-            $("#mostrarEdad").css("color","blue");
         }
     </script>
 </html>

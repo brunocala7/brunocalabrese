@@ -54,3 +54,20 @@ function agregarFila() {
     document.getElementById("tabla").appendChild(tr);
     document.getElementById("tabla").removeChild(tr_a_borrar);
 }
+
+function cambiar_estilo () {
+    $("#tabla").css("margin-left","100px");
+    $("#tabla").css("color","white");
+    $("td").css("background-color","black");
+
+    let valorMargen = $("#tabla").css("margin-left");
+    let color = $("#tabla").css("color");
+    let colorFondo = $("td").css("background-color");
+    
+    let mensaje = "El elemento modificado es la tabla" + "\n";
+    mensaje += "El valor del margen izquierdo es: " + valorMargen + "\n";
+    mensaje += "El valor del color es: " + colorFondo + "\n" ;
+
+    alert(mensaje);
+
+}
