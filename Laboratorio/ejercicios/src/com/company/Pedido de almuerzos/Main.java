@@ -39,11 +39,35 @@ public class Main {
                     System.out.println("1- ALTA");
                     System.out.println("2- BAJA");
                     System.out.println("3- MODIFICACION");
+                    opcion = sc.nextInt();
+                    switch (opcion){
+                        case 1:
+                            m.agregarProfesor();
+                            break;
+                        case 2:
+                            m.borrarProfesor();
+                            break;
+                        case 3:
+                            m.cambiarProfesor();
+                    }
+
                     break;
                 case 3:
                     System.out.println("1- ALTA");
                     System.out.println("2- BAJA");
                     System.out.println("3- MODIFICACION");
+                    opcion = sc.nextInt();
+
+                    switch (opcion){
+                        case 1:
+                            m.agregarPlato();
+                            break;
+                        case 2:
+                            m.borrarPlatos();
+                            break;
+                        case 3:
+                            m.cambiarPlato();
+                    }
                     break;
                 case 4: 
                     System.out.println("1- ALTA");
@@ -54,6 +78,12 @@ public class Main {
                     switch(opcion){
                         case 1:
                             m.agregarPedido();
+                            break;
+                        case 2:
+                            m.borrarPedidos();
+                            break;
+                        case 3:
+                            m.cambiarPedido();
                             break;
                         case 4:
                             System.out.println(m.listadoPlatos());

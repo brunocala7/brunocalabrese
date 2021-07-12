@@ -40,8 +40,8 @@ public class Menu {
 
     public void agregarPedido(){
         String fecha,hora,nombrePersona,apellidoPersona,nombrePlato;
-        Persona p_pedido;
-        Plato plato;
+        Persona p_pedido = new Persona();
+        Plato plato = new Plato();
         Scanner sc = new Scanner(System.in);
 
 
@@ -167,6 +167,114 @@ public class Menu {
         }
     }
 
+    public void cambiarProfesor(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("1- Nombre");
+        System.out.println("2- Apellido");
+        System.out.println("3- Descuento");
+
+        int opcion = sc.nextInt();
+
+        switch (opcion){
+            case 1:
+                System.out.print("Nombre viejo: ");
+                String nombre = sc.nextLine();
+                System.out.print("Nombre nuevo: ");
+                String nombre_nuevo = sc.nextLine();
+                for(Profesor p1 : this.profesores){
+                    if(nombre == p1.getNombre()){
+                        p1.setNombre(nombre_nuevo);
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Apellido viejo: ");
+                String apellido = sc.nextLine();
+                System.out.print("Nombre nuevo: ");
+                String apellido_nuevo = sc.nextLine();
+                for(Profesor p1 : this.profesores){
+                    if(apellido == p1.getApellido()){
+                        p1.setApellido(apellido_nuevo);
+                    }
+                }
+                break;
+        }
+    }
+
+    public void cambiarPlato (){
+        System.out.println("1- NOMBRE");
+        System.out.println("2- PRECIO");
+        Scanner sc = new Scanner(System.in);
+        int opcion = sc.nextInt();
+        System.out.print("Nombre plato: ");
+        String nombre = sc.nextLine();
+        switch (opcion){
+            case 1:
+                System.out.print("Nombre nuevo: ");
+                String nuevo = sc.nextLine();
+                for (Plato p1 : this.platos){
+                    if(p1.getNombre() == nombre){
+                        p1.setNombre(nuevo);
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Precio nuevo: ");
+                float precio = sc.nextFloat();
+
+                for (Plato p1: this.platos){
+                    if(nombre == p1.getNombre()){
+                        p1.setPrecio(precio);
+                    }
+                }
+                break;
+        }
+    }
+
+    public void cambiarPedido(){
+        System.out.print("Hora pedido: ");
+        Scanner sc = new Scanner(System.in);
+        String hora = sc.nextLine();
+
+        System.out.println("1- HORA");
+        System.out.println("2- FECHA");
+        System.out.println("3- ENTREGA");
+
+        int opcion = sc.nextInt();
+
+        switch (opcion){
+            case 1:
+                String nuevaHora = sc.nextLine();
+                for(Pedido p1 : this.pedidos){
+                    if(p1.getHora() == hora){
+                        p1.setHora(nuevaHora);
+                    }
+                }
+                break;
+            case 2:
+                String nuevaFecha = sc.nextLine();
+                for(Pedido p1 : this.pedidos){
+                    if(p1.getHora() == hora){
+                        p1.setFecha(nuevaFecha);
+                    }
+                }
+                break;
+            case 3:
+                for(Pedido p1 : this.pedidos){
+                    if(p1.getHora() == hora){
+                        if(p1.getEntrega()){
+                            p1.setEntrega(false);
+                        }
+                        else{
+                            p1.setEntrega(true);
+                        }
+                    }
+                }
+        }
+
+    }
+
     //DELETERS
 
     public void borrarAlumno() {
@@ -244,6 +352,7 @@ public class Menu {
                 }
             }
             precio = (desc * 100) / precio;
+            listado.put(p1,precio);
         }
 
         return listado;
