@@ -1,11 +1,11 @@
 public class Pedido {
     private String fecha;
-    private String persona;
+    private Persona persona;
     private Plato plato;
     private String hora;
     private Boolean entrega;
 
-    public Pedido (String fecha,String persona,Plato p1,String hora){
+    public Pedido (String fecha,Persona persona,Plato p1,String hora){
         this.fecha = fecha;
         this.persona = persona;
         this.plato = p1;
@@ -19,7 +19,7 @@ public class Pedido {
         return this.fecha;
     }
 
-    public String getPersona (){
+    public Persona getPersona (){
         return this.persona;
     }
 
@@ -41,7 +41,7 @@ public class Pedido {
         this.fecha = f;
     }
 
-    public void setPersona (String p){
+    public void setPersona (Persona p){
         this.persona = p;
     }
 
