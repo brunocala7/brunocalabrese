@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <title>Trabajos del año</title>
+    </head>
+    <body class="bg-light">
+        <section class="py-5 text-center container bg-dark bg-opacity-25 mt-5">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <h1>Muestra de Trabajos</h1>
+                <p class="lead">Hacé click en cualquiera de los trabajos para probarlos</p>
+                <p>
+                  <a href="https://github.com/brunocala7/brunocalabrese_" class="btn btn-primary btn-lg my-2">Ir al repositorio</a>
+                </p>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btn btn-danger btn-lg" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bruno Calabrese">
+                    Nombre
+                </button>
+                <button type="button" class="btn btn-danger btn-lg" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="3 CST Computación">
+                    Curso
+                </button>
+            </div>
+            </div>
+        </section>
+
+        <script type="text/javascript" src="jquery-3.6.0.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+})
+</script>
