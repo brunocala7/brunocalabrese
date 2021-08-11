@@ -1,7 +1,15 @@
-public class Viaje{
+import java.util.ArrayList;
+
+public class Viaje extends ArrayList<Viaje> {
     private float precio;
     private String fecha;
     private String hora;
+
+    public Viaje (){
+        this.fecha = "19/4/2021";
+        this.hora = "15:42";
+        this.precio = 40.0f;
+    }
 
     public Viaje (Float p,String f,String h){
         this.precio = p;
@@ -34,4 +42,14 @@ public class Viaje{
     public void setHora(String h) {
         this.hora = h;
     }
+
+    @Override
+    public String toString(){
+        String devolucion = "hora: " + this.getHora() + " | fecha: " + this.getFecha() + " | precio: " + this.getPrecio();
+
+        return devolucion;
+    }
+
+
+    
 }

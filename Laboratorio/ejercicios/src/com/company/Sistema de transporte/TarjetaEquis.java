@@ -1,15 +1,23 @@
 import java.util.ArrayList;
 
-public class TarjetaEquis {
+public class TarjetaEquis extends Viaje {
     private float saldo;
     private float saldoNegativoMaximo;
     private float numeroId;
     ArrayList<Viaje> listaViajes;
 
     public TarjetaEquis(Float s,Float sn,Float n){
+
         this.saldo = s;
         this.saldoNegativoMaximo = sn;
         this.numeroId = n;
+        this.listaViajes = new ArrayList<>();
+    }
+
+    public TarjetaEquis(){
+        this.saldo = 20.f;
+        this.saldoNegativoMaximo = -40.f;
+        this.numeroId = 5.f;
         this.listaViajes = new ArrayList<>();
     }
 
@@ -28,6 +36,11 @@ public class TarjetaEquis {
 
     public ArrayList<Viaje> getListaViajes (){
         return this.listaViajes;
+    }
+
+    public Viaje getViaje (){
+        Viaje v = new Viaje(this.getPrecio(),this.getFecha(),this.getHora());
+        return v;
     }
 
     //SETTERS
@@ -62,5 +75,20 @@ public class TarjetaEquis {
         monto = this.listaViajes.get(listaViajes.size()-1).getPrecio();
 
         return monto;
+    }
+
+    @Override
+    public String toString(){
+        String s = "";
+        for (Viaje viaje : listaViajes) {
+            s = s + viaje.toString() + " | saldo: " + this.saldo + "\n";
+        }
+
+        return s;
+    }
+
+    public static void main(String[] args) {
+        TarjetaEquis t = new TarjetaEquis(45.6f, -50.4f, 2f);
+        System.out.println(t.toString());
     }
 }
