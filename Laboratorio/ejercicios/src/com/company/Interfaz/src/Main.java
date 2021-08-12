@@ -1,10 +1,12 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.lang.Integer;
 
 public class Main {
 
     public static void main(String[] args) {
+        Persona p1 = new Persona();
         JFrame ventana = new JFrame();
         ventana.setLayout(null);
         ventana.setSize(1000, 1000);
@@ -86,6 +88,11 @@ public class Main {
                         String texto3 = c3.getText();
                         String texto4 = c4.getText();
                         String texto5 = c5.getText();
+                        p1.setNombre(texto);
+                        p1.setEdad(Integer.parseInt(texto2));
+                        p1.setDni(Integer.parseInt(texto3));
+                        p1.setTelefono(Integer.parseInt(texto4));
+                        p1.setDireccion(texto5);
                         texto = "Nombre: " + texto + " | " + "Edad: " + texto2 + " | " + "Dni: " + texto3 + " | " + "Telefono: " + texto4 + " | " + "Direccion: " + texto5;
                         respuesta.setText(texto);
                     }
