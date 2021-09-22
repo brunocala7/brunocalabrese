@@ -7,6 +7,10 @@ public class Categoria {
         this.tipo = tipo;
     }
 
+    public Categoria(){
+        this.tipo = "";
+    }
+
     public String getTipo() {
         return tipo;
     }

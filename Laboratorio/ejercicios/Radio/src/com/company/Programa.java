@@ -10,11 +10,18 @@ public class Programa {
     private CategoriaMusica categoriaMusica;
     private Horario horario;
 
-    public Programa(String nombre, Usuario operadorTecnico, Categoria categoria, CategoriaMusica categoriaMusica,Horario horario) {
+    public Programa(String nombre, Usuario operadorTecnico, Categoria categoria, Horario horario) {
         this.nombre = nombre;
         this.conductores = new HashSet<>();
         this.operadorTecnico = operadorTecnico;
         this.categoria = categoria;
+        this.horario = horario;
+    }
+
+    public Programa(String nombre, HashSet<Usuario> conductores, Usuario operadorTecnico, CategoriaMusica categoriaMusica, Horario horario) {
+        this.nombre = nombre;
+        this.conductores = conductores;
+        this.operadorTecnico = operadorTecnico;
         this.categoriaMusica = categoriaMusica;
         this.horario = horario;
     }

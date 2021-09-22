@@ -6,6 +6,12 @@ public class CategoriaMusica extends Categoria{
     private Usuario musicalizador;
     private HashSet<String> estilos;
 
+    public CategoriaMusica(){
+        super();
+        this.musicalizador = new Usuario("","",0,"");
+        this.estilos = new HashSet<>();
+    }
+
     public CategoriaMusica(String tipo, Usuario musicalizador) {
         super(tipo);
         this.musicalizador = musicalizador;

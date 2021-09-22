@@ -13,6 +13,13 @@ public class Usuario {
         this.fechaAlta = fechaAlta;
     }
 
+    public Usuario() {
+        this.nombre = "";
+        this.apellido = "";
+        this.dni = 0;
+        this.fechaAlta = "";
+    }
+
     public String getNombre() {
         return nombre;
     }
