@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="estilo.css">
+        <script type="text/javascript" src="jquery-3.6.0.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    </head>
+
+    <body id="body">
+
+        <h1 id="titulo"> ABM alumnos </h1>
+
+
+        <div id="alumnosRegistrados">
+            <button class="btn btn-light" id="mostrarTodosLosAlumnos" onclick="buscarTodosLosAlumnos()"> Mostrar todos los alumnos</button>
+        </div>
+
+        <hr size="15px" color="black"/>
+
+        <div id="buscarAlumno">
+            <input type="number" placeholder="Id a buscar" id="idAlumnoABuscar">
+            <button class="btn btn-info" id="mostrarAlumno" onclick="buscarAlumno()">Mostrar alumno</button>
+        </div>
+
+        <hr size="15px" color="black">
+
+        <div id="formulario">
+
+        <h1>Formulario nuevo alumno</h1>
+
+        <h3>Ingresar id</h3>
+        <input id="id" type="text">
+        <h3>Ingresar el nombre</h3>
+        <input id="nombre" type="text">
+        <h3>Ingresar la edad</h3>
+        <input id="edad" type="number">
+
+        <button type="button" class="btn btn-success" onclick="ingresoAlumno()">Enviar</button>
+
+        </div>
+
+        <hr size="15px" color="black">
+
+        <div id="modificarAlumno">
+            <input type="text" placeholder="Id a modificar" id="idAlumnoModificar">
+            <input type="text" placeholder="Valor nuevo" id="valorAModificar">
+            <form>
+                    <input type="radio" value="1" name="check">
+                    Nombre
+                    <br>
+                    <input type="radio" value="2" name="check">
+                    Edad
+                    <button type="button" class="btn btn-warning" onclick="editarAlumno()">Modificar</button>
+            </form>
+
+        </div>
+
+        <hr size="15px" color="black">
+
+        <div id="eliminarAlumno">
+            <input type="text" placeholder="Id a borrar" id="idABorrar">
+            <button type="button" class="btn btn-danger" onclick="borrarAlumno()">Borrar</button>
+        </div>
+
+       
+
+        <script type="text/javascript" src="funciones2.js"></script>
+
+    </body>
+</html>
