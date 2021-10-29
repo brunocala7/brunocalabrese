@@ -161,7 +161,7 @@ public class AccesoBaseDeDatos {
         } catch (SQLException exception){
             exception.printStackTrace();
         }
-        datos.put("Alumnos: ",alumnosDeLaBase);
+        datos.put("alumnos",alumnosDeLaBase);
         return datos;
     }
 

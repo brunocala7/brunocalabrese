@@ -23,14 +23,14 @@ public class Controller {
     }
 
 
-    @RequestMapping(value = "http://localhost:8080/api/alumnos/", method = RequestMethod.GET)
+    @RequestMapping(value = "datos/alumnos", method = RequestMethod.GET)
     public ResponseEntity<Object> obtenerPaginas() throws SQLException {
         accesoABaseDeDatos.conectar("alumno","alumnoipm");
         HashMap<String, Object> datos = accesoABaseDeDatos.obtenerDatos();
         return new ResponseEntity<>(datos, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "http://localhost:8080/api/alumnos/", method = RequestMethod.POST)
+    @RequestMapping(value = "datos/alumnos", method = RequestMethod.POST)
     public ResponseEntity<Object> agregarPagina(@RequestBody HashMap alumno) {
         accesoABaseDeDatos.conectar("alumno","alumnoipm");
         int id = Integer.parseInt((String) alumno.get("id"));
@@ -41,32 +41,35 @@ public class Controller {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "http://localhost:8080/api/alumnos/{id}", method = RequestMethod.PATCH)
-    public ResponseEntity<Object> modificarAlumno(@RequestBody HashMap alumno) {
+    @RequestMapping(value = "datos/alumnos/{id}", method = RequestMethod.PATCH)
+    public ResponseEntity<Object> modificarAlumno(@RequestBody HashMap alumno,@PathVariable int id) {
         accesoABaseDeDatos.conectar("alumno","alumnoipm");
-        int id = Integer.parseInt((String) alumno.get("id"));
         String campo = (String) alumno.get("campo");
-        String valor = (String) alumno.get("valor");
+        System.out.println(campo);
+        String valor = (String) alumno.get("nuevoValor");
+        System.out.println(valor);
 
-        String consulta = "UPDATE" + accesoABaseDeDatos.getNombreTabla() + "SET" + campo + "='" + valor + "' WHERE id = " + id;
+        String consulta = "UPDATE " + accesoABaseDeDatos.getNombreTabla() + " SET "  + campo + " = '" + valor + "' WHERE id = " + id;
         accesoABaseDeDatos.modificarTabla(consulta);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping(value = "http://localhost:8080/api/alumnos/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> obtenerAlumno(@RequestBody HashMap data) throws SQLException {
+    @RequestMapping(value = "datos/alumnos/{id}",method = RequestMethod.GET)
+    public ResponseEntity<Object> obtenerInformacionDeAlumno(@PathVariable int id){
         accesoABaseDeDatos.conectar("alumno","alumnoipm");
-        String consulta = "SELECT * FROM alumno WHERE id = " + data.get("id");
+        HashMap<String, Object> infoDeRespuesta = new HashMap<>();
+        String consulta = "SELECT * FROM alumno WHERE id = " + id;
         Alumno alumno = accesoABaseDeDatos.buscarAlumno(consulta);
         HashMap<String,Object> datos = new HashMap<>();
-        datos.put("Persona:", datos);
-        return new ResponseEntity<>(datos, HttpStatus.OK);
+        datos.put("Persona:", alumno);
+        return new ResponseEntity<>(alumno,HttpStatus.OK);
+
     }
 
-    @RequestMapping(value = "http://localhost:8080/api/alumnos/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> borrarAlumno(@RequestBody HashMap data) throws SQLException {
+    @RequestMapping(value = "datos/alumnos/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Object> borrarAlumno(@PathVariable int id) throws SQLException {
         accesoABaseDeDatos.conectar("alumno","alumnoipm");
-        String consulta = "DELTE FROM alumno WHERE id = " + data.get("id");
+        String consulta = "DELETE FROM alumno WHERE id = " + id;
         accesoABaseDeDatos.modificarTabla(consulta);
         return new ResponseEntity<>(HttpStatus.OK);
     }

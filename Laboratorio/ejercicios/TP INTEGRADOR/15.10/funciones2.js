@@ -32,10 +32,10 @@ function editarAlumno() {
     var valor = $("#valorAModificar").val();
     console.log(campo);
 
-    let objetoConActualizacion = {id : idIngresada,campo : campo,nuevoValor : valor};
+    let objetoConActualizacion = {campo : campo,nuevoValor : valor};
 
     $.ajax({
-        url: "http://localhost:8080/api/alumnos/" + idIngresada,
+        url: "http://localhost:8080/api/datos/alumnos/" + idIngresada,
         type: 'PATCH',
         contentType: "application/json",
         data: JSON.stringify(objetoConActualizacion)
@@ -56,7 +56,7 @@ function editarAlumno() {
 function borrarAlumno(){
     var id = $("#idABorrar").val();
 
-    var url = "http://localhost:8080/api/alumnos/" + id;
+    var url = "http://localhost:8080/api/datos/alumnos/" + id;
 
     
 
@@ -97,16 +97,15 @@ function verificar() {
 function buscarAlumno() {
     var idIngresada = $("#idAlumnoABuscar").val();
     $.ajax({
-        url: "http://localhost:8080/api/alumnos/" + idIngresada,
+        url: "http://localhost:8080/api/datos/alumnos/" + idIngresada,
         type: 'GET'
     })
     .done(function (data) {
-        alert(data.message);
 
         alert("Datos alumno" + "\n" + 
         "Id: " + idIngresada + "\n" + 
-        "Nombre: " + data + "\n" +
-        "Edad: " + data + "\n");
+        "Nombre: " + data.nombre + "\n" +
+        "Edad: " + data.edad + "\n");
     
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
@@ -119,12 +118,20 @@ function buscarAlumno() {
 
 function buscarTodosLosAlumnos() {
     $.ajax({
-        url: "http://localhost:8080/api/alumnos/",
+        url: "http://localhost:8080/api/datos/alumnos/",
         type: 'GET'
     })
     .done(function (data) {
+        let arrayAlumnos = data.alumnos;
 
-        alert(data);
+        var mensaje = "";
+
+        for (let i = 0; i < arrayAlumnos.length; i++) {
+            let alumno = arrayAlumnos[i];
+            mensaje += "Alumno " + alumno.id + "\n" + "Nombre: " + alumno.nombre + "\n" + "Edad: " + alumno.edad + "\n" + "\n";
+        }
+
+        alert(mensaje);
 
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
