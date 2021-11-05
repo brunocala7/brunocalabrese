@@ -1,6 +1,6 @@
 package com.company;
 
-public class Pajarito extends Mascota{
+public class Pajarito extends Mascota implements FuncionesAnimales{
     private int energia;
 
     public Pajarito(String nombre, String tipo, String nombreDueño) {
@@ -14,5 +14,21 @@ public class Pajarito extends Mascota{
 
     public void setEnergia(int energia) {
         this.energia = energia;
+    }
+
+
+    @Override
+    public void alimentar() {
+        this.energia++;
+    }
+
+    @Override
+    public void saludoDueño() {
+        System.out.println("pio");
+    }
+
+    @Override
+    public void saludoExtraño() {
+        
     }
 }

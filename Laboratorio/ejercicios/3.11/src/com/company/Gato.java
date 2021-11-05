@@ -1,6 +1,6 @@
 package com.company;
 
-public class Gato extends Mascota implements Alimentacion{
+public class Gato extends Mascota implements FuncionesAnimales{
     private int energia;
 
     public Gato(String nombre, String tipo, String nombreDueño) {
@@ -14,5 +14,20 @@ public class Gato extends Mascota implements Alimentacion{
 
     public void setEnergia(int energia) {
         this.energia = energia;
+    }
+
+    @Override
+    public void alimentar() {
+        this.energia++;
+    }
+
+    @Override
+    public void saludoDueño() {
+        System.out.println("miau");
+    }
+
+    @Override
+    public void saludoExtraño() {
+        System.out.println("MIAU!");
     }
 }
