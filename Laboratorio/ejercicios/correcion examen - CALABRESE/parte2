@@ -1,0 +1,8 @@
+Clase Veterinaria que tiene un arraylist de mascotas y los metodos Listar las razas de perros que no hayan cumplido con la asistencia mínima del año actual y Conocer qué tipo de mascota (perro, gato o tortuga) tuvo mejor asistencia en el año actual.
+Clase mascota que tiene como atributos un arraylist de las fechas donde fue a controlarse. 
+Clase perro, gato (perros y gatos deben tener el atributo raza)  y Clase Veterinaria que tiene un arraylist de mascotas y los metodos Listar las razas de perros que no hayan cumplido con la asistencia mínima del año actual y Conocer qué tipo de mascota (perro, gato o tortuga) tuvo mejor asistencia en el año actual.
+Clase mascota que tiene como atributos un arraylist de las fechas donde fue a controlarse. 
+Clase perro, gato (perros y gatos deben tener el atributo raza)  y tortuga que son subclases de la clase mascota. 
+Interfaz de comportamientos de mascota con dos metodos: Listar las razas de perros que no hayan cumplido con la asistencia mínima del año actual.
+y conocer qué tipo de mascota  tuvo mejor asistencia en el año actual.
+
