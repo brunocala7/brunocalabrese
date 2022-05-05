@@ -21,17 +21,3 @@ print(list(df.columns))
 print(df["Nombre"].values)
 
 
-"""
-df = pd.read_csv("datos_nomivac_covid19.csv")
-df = pd.read_csv("datos_nomivac_covid19.csv",sep=";",engine="python")
-print(df)
-print(list(df.columns))
-print(list(df.index))
-print(df['grupo_etario'])
-df.loc[0:1000]
-df.loc[[1,5,8]]
-dfConIndiceDNI = df.set_index('DNI')
-df['sexo'].value_counts()
-df_2 = df.drop_duplicates()
-df.to_csv("nuevo.csv")
-"""
